@@ -1,0 +1,12 @@
+# Archivos y carpetas generadas automáticamente
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.DS_Store
+node_modules/
+vendor/
+.bundle/
+coverage/
+public/assets/
