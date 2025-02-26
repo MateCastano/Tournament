@@ -12,5 +12,9 @@ class Player
         puts "Nombre: #{@name} || Equipo: #{@team} || Posicion: #{@position}"
         puts "-----------------"
     end
+
+    def print_info_by_team(team)
+        
+    end
 end 
 

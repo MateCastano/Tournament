@@ -10,3 +10,5 @@ vendor/
 .bundle/
 coverage/
 public/assets/
+# Caché y archivos de GitLens
+.gitlens/
