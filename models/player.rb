@@ -9,12 +9,7 @@ class Player
 
     #Methods
     def print_all_info
-        puts "Nombre: #{@name} || Equipo: #{@team} || Posicion: #{@position}"
-        puts "-----------------"
-    end
-
-    def print_info_by_team(team)
-        
+        puts "#{@name} || Equipo: #{@team} || Posicion: #{@position}"
     end
 end 
 
