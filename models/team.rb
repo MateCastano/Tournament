@@ -9,11 +9,10 @@ class Team
     #Methods
     def print_all_info
         puts "Nombre: #{@name}"
-        puts "-----------------"
     end
 
     def print_info_by_team
-        if players.empty?
+        if @players.empty?
             puts "No existen jugadores registrados en este equipo."
         else
             puts "Jugadores"    
