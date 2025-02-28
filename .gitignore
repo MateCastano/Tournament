@@ -12,3 +12,4 @@ coverage/
 public/assets/
 # Caché y archivos de GitLens
 .gitlens/
+tournamente.txt
