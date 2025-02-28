@@ -1,28 +1,32 @@
 📌 Requerimientos del Sistema de Torneos de Básquet
 
-Soy el cliente y quiero un sistema que se use desde la terminal para gestionar torneos de básquet. Estas son las funcionalidades que necesito:
 1️⃣ Gestión de Equipos y Jugadores
 
 ✔️ Poder crear equipos, asignándoles un nombre.
 ✔️ Agregar jugadores a cada equipo, indicando su nombre y posición.
 ✔️ Ver una lista de todos los equipos registrados.
 ✔️ Ver una lista de jugadores de un equipo específico.
+
 2️⃣ Configuración del Torneo
 
 ✔️ Elegir si el torneo será "liga" (todos contra todos) o "eliminación directa".
 ✔️ Generar automáticamente los enfrentamientos según el tipo de torneo.
+
 3️⃣ Registro de Partidos
 
 ✔️ Registrar el resultado de cada partido, ingresando los puntos de cada equipo.
 ✔️ Ver una lista de los partidos programados y sus resultados.
+
 4️⃣ Clasificación y Avance del Torneo
 
 ✔️ Si es un torneo de liga, quiero ver la tabla de posiciones, con equipos ordenados por puntos.
 ✔️ Si es un torneo de eliminación, quiero que el sistema determine qué equipos avanzan a la siguiente fase.
+
 5️⃣ Guardado y Carga de Datos
 
 ✔️ Poder guardar los datos del torneo en un archivo para no perderlos al cerrar el programa.
 ✔️ Poder cargar un torneo guardado previamente para continuar donde lo dejé.
+
 6️⃣ Control del Programa
 
 ✔️ Un menú principal en la terminal con opciones para navegar entre las funciones.
