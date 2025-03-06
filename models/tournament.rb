@@ -43,4 +43,25 @@ class Tournament
             @format = "Eliminacion directa"
         end
     end
+
+    def fixture()
+        puts "Fixture"
+        i = 0
+        teams_selected = []
+        flag = 0
+        
+        while i < @teams.length
+            select = @teams.sample
+            teams_selected.each do |team|
+                if team == select 
+                    flag = 1
+                end
+            end
+            if flag != 1
+                teams_selected = select
+                select.print_all_info
+            end   
+            i = i + 1
+        end
+    end
 end
