@@ -30,5 +30,6 @@ team1.save_player(player1)
 team1.save_player(player2)
 
 tournament1.generate_fixture
+tournament1.show_fixture
 
 

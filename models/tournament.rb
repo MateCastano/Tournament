@@ -68,4 +68,15 @@ class Tournament
             matchups.each{|match| file.puts match}
         end
     end
+
+    #Muestra el fixture
+    def show_fixture
+        if File.read("data/fixture.txt").strip.empty?
+            puts "No se ha generado un fixture aun."
+        else
+            File.open("data/fixture.txt", "r") do |file|
+            puts file.read
+            end
+        end 
+    end 
 end
