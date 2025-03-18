@@ -52,8 +52,6 @@ class Tournament
     #Genera el fixture del torneo con los equipos disponibles
     def generate_fixture
         File.open("data/fixture.txt", "w") { |file| file.truncate(0) }
-        puts "Fixture generado"
-        
         shuffled_teams = @teams.shuffle
         matchups = []
 
@@ -83,7 +81,7 @@ class Tournament
 
     #Guarda resultado
     def save_result(team_a, team_b, points_team_a, points_team_b)
-        File.open("data/results.txt", "w") do |file|
+        File.open("data/results.txt", "a") do |file|
         file.puts "#{team_a} #{points_team_a} - #{team_b} #{points_team_b}"
         end
     end

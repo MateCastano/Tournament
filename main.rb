@@ -33,6 +33,6 @@ tournament1.generate_fixture
 tournament1.show_fixture
 
 tournament1.save_result("Lakers", "Celtics", 103, 101)
+tournament1.save_result("Knicks", "Heat", 120, 91)
+tournament1.save_result("Thunder", "Sixerss", 100, 131)
 tournament1.show_results
-
-

@@ -2,9 +2,10 @@ class Team
     def initialize(name)
         @name = name
         @players = []
+        @points = 0
     end
 
-    attr_accessor :name, :players
+    attr_accessor :name, :players, :points
 
     #Methods
     def print_all_info
