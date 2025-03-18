@@ -1,8 +1,8 @@
 class Team
-    def initialize(name)
+    def initialize(name, points)
         @name = name
         @players = []
-        @points = 0
+        @points = points
     end
 
     attr_accessor :name, :players, :points

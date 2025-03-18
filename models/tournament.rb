@@ -51,7 +51,6 @@ class Tournament
     
     #Genera el fixture del torneo con los equipos disponibles
     def generate_fixture
-        File.open("data/fixture.txt", "w") { |file| file.truncate(0) }
         shuffled_teams = @teams.shuffle
         matchups = []
 
@@ -95,5 +94,19 @@ class Tournament
             puts file.read
             end
         end 
+    end
+
+    #Generar tabla de puntuacion
+    def generate_table
+        puts "Tabla de puntajes."
+        File.open("data/table-bracket.txt", "w") do |file|
+            soarted_teams = @teams.sort_by {|team| team.points}.reverse
+            soarted_teams.each do |team|
+                file.puts "#{team.name} #{team.points} pts."
+            end
+        end
+        File.open("data/table-bracket.txt", "r") do |file|
+            puts file.read
+        end
     end
 end
