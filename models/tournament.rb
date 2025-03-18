@@ -3,9 +3,10 @@ class Tournament
         @name = name
         @teams = []
         @format
+        @results = []
     end
 
-    attr_accessor :name, :teams, :format
+    attr_accessor :name, :teams, :format, :results
 
     #Methods
     #Muestra toda la info del torneo
@@ -78,5 +79,23 @@ class Tournament
             puts file.read
             end
         end 
-    end 
+    end
+
+    #Guarda resultado
+    def save_result(team_a, team_b, points_team_a, points_team_b)
+        File.open("data/results.txt", "w") do |file|
+        file.puts "#{team_a} #{points_team_a} - #{team_b} #{points_team_b}"
+        end
+    end
+
+    #Mostrar resultados
+    def show_results
+        if File.read("data/results.txt").strip.empty?
+            puts "No se ha guardado resultados."
+        else
+            File.open("data/results.txt", "r") do |file|
+            puts file.read
+            end
+        end 
+    end
 end

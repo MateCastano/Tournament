@@ -32,4 +32,7 @@ team1.save_player(player2)
 tournament1.generate_fixture
 tournament1.show_fixture
 
+tournament1.save_result("Lakers", "Celtics", 103, 101)
+tournament1.show_results
+
 
