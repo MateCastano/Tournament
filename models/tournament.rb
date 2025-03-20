@@ -1,3 +1,4 @@
+require "json"
 class Tournament
     def initialize(name)
         @name = name
@@ -80,8 +81,25 @@ class Tournament
 
     #Guarda resultado
     def save_result(team_a, team_b, points_team_a, points_team_b)
+        result = [{"local" => team_a, 
+                "visitante" => team_b, 
+                "puntos_local" => points_team_a,
+                "puntos_visitante" => points_team_b}]
+
+        if points_team_a > points_team_b
+            winner_team = team_a    
+        else
+            winner_team = team_b
+        end
+        
+        @teams.each do |team|
+            if team.name == winner_team
+                team.points = team.points + 3
+            end
+        end
+        
         File.open("data/results.txt", "a") do |file|
-        file.puts "#{team_a} #{points_team_a} - #{team_b} #{points_team_b}"
+        file.puts result.to_json
         end
     end
 
