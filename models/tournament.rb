@@ -3,11 +3,10 @@ class Tournament
     def initialize(name)
         @name = name
         @teams = []
-        @format
         @results = []
     end
 
-    attr_accessor :name, :teams, :format, :results
+    attr_accessor :name, :teams, :results
 
     #Methods
     #Muestra toda la info del torneo
@@ -38,18 +37,6 @@ class Tournament
         @teams << team
     end
 
-    #Establece el formato del torneo
-    def set_format(num)
-        if !num
-            puts "Ingrese un numero."
-        end
-        if num == 1
-            @format = "Liga"
-        elsif num == 2
-            @format = "Eliminacion directa"
-        end
-    end
-    
     #Genera el fixture del torneo con los equipos disponibles
     def generate_fixture
         shuffled_teams = @teams.shuffle

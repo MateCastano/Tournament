@@ -3,7 +3,6 @@ require_relative 'models/team.rb'
 require_relative 'models/tournament.rb'
 
 tournament1 = Tournament.new("NBA") 
-tournament1.set_format(1)
 
 team1 = Team.new("Lakers")
 team2 = Team.new("Celtics")
@@ -37,6 +36,6 @@ tournament1.save_result("Celtics", "Heat", 120, 91)
 tournament1.save_result("Thunder", "Sixers", 100, 131)
 tournament1.save_result("Heat", "Sixers", 90, 110)
 tournament1.save_result("Warriors", "Bulls", 100, 131)
-#tournament1.show_results
+tournament1.show_results
 puts "----------"
 tournament1.generate_table
