@@ -22,6 +22,8 @@ class Tournament
         else
             puts "Equipos"    
             @teams.each do |team|
+                next if team.name == "Libre"
+        
                 team.print_all_info
             end
         end
@@ -39,33 +41,23 @@ class Tournament
 
     #Genera el fixture del torneo con los equipos disponibles
     def generate_fixture
-        shuffled_teams = @teams.shuffle
-        matchups = []
-
-        shuffled_teams.each_slice(2) do |pair|
-            if pair.size == 2
-                matchups << "#{pair[0].name} vs #{pair[1].name}"
-            else
-                matchups << "#{pair[0].name} queda libre esta fecha."
-            end
-        end
+        
+        if @teams.length.odd?
+            @teams << Team.new("Libre")
+        end 
 
         File.open("data/fixture.txt", "w") do |file|
-            matchups.each{|match| file.puts match}
+            
         end
-    end
 
-    #Muestra el fixture
-    def show_fixture
         if File.read("data/fixture.txt").strip.empty?
             puts "No se ha generado un fixture aun."
         else
             File.open("data/fixture.txt", "r") do |file|
             puts file.read
             end
-        end 
+        end
     end
-
     #Guarda resultado
     def save_result(team_a, team_b, points_team_a, points_team_b)
         result = [{"local" => team_a, 
@@ -107,6 +99,8 @@ class Tournament
         File.open("data/table-bracket.txt", "w") do |file|
             soarted_teams = @teams.sort_by {|team| team.points}.reverse
             soarted_teams.each do |team|
+                next if team.name == "Libre"
+                
                 file.puts "#{team.name} #{team.points} pts."
             end
         end

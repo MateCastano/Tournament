@@ -13,6 +13,7 @@ team6 = Team.new("Sixers")
 team7 = Team.new("Thunder")
 team8 = Team.new("Heat")
 team9 = Team.new("Magic")
+team10 = Team.new("Pacers")
 
 tournament1.save_team(team1)
 tournament1.save_team(team2)
@@ -22,22 +23,13 @@ tournament1.save_team(team5)
 tournament1.save_team(team6)
 tournament1.save_team(team7)
 tournament1.save_team(team8)
-tournament1.save_team(team9)             
+tournament1.save_team(team9)
+tournament1.save_team(team10)
+ 
+tournament1.print_info_by_team
 
-player1 = Player.new("Lebron James", "Lakers", "Alero")
-player2 = Player.new("Luka Doncic", "Lakers", "Base")
-
-team1.save_player(player1)
-team1.save_player(player2)
 puts "----------"
 tournament1.generate_fixture
-tournament1.show_fixture
 
-tournament1.save_result("Lakers", "Celtics", 100, 101)
-tournament1.save_result("Celtics", "Heat", 120, 91)
-tournament1.save_result("Thunder", "Sixers", 100, 131)
-tournament1.save_result("Heat", "Sixers", 90, 110)
-tournament1.save_result("Warriors", "Bulls", 100, 131)
-tournament1.show_results
 puts "----------"
 tournament1.generate_table
