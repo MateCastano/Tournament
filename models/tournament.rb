@@ -58,6 +58,18 @@ class Tournament
             end
         end
     end
+
+    #Muestra el fixture
+    def show_fixture    
+        if File.read("data/fixture.txt").strip.empty?
+            puts "No se ha generado un fixture aun."
+        else
+            File.open("data/fixture.txt", "r") do |file|
+            puts file.read
+            end
+        end
+    end
+
     #Guarda resultado
     def save_result(team_a, team_b, points_team_a, points_team_b)
         result = [{"local" => team_a, 
