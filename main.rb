@@ -30,6 +30,6 @@ tournament1.print_info_by_team
 
 puts "----------"
 tournament1.generate_fixture
+tournament1.show_fixture
 
-puts "----------"
 tournament1.generate_table

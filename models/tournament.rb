@@ -45,18 +45,33 @@ class Tournament
         if @teams.length.odd?
             @teams << Team.new("Libre")
         end 
+        
+        fixture = []
+
+        (0...@teams.length - 1).each do |round|
+            matchups = []
+            
+            (0...(@teams.length / 2)).each do |i|
+              team_a = @teams[i]
+              team_b = @teams[@teams.length - 1 - i]
+              
+              unless team_a.name == "Libre" || team_b.name == "Libre"
+                matchups << [team_a, team_b]
+              end
+            end
+          
+            fixture << matchups
+            teams.insert(1, teams.pop)
+        end
 
         File.open("data/fixture.txt", "w") do |file|
-            
-        end
-
-        if File.read("data/fixture.txt").strip.empty?
-            puts "No se ha generado un fixture aun."
-        else
-            File.open("data/fixture.txt", "r") do |file|
-            puts file.read
+            fixture.each_with_index do |round, index|
+                file.puts "Fecha #{index + 1}:"
+                round.each { |match| file.puts "#{match[0].name} vs #{match[1].name}" }
+                file.puts "-" * 20
             end
-        end
+        end      
+        
     end
 
     #Muestra el fixture
@@ -65,7 +80,7 @@ class Tournament
             puts "No se ha generado un fixture aun."
         else
             File.open("data/fixture.txt", "r") do |file|
-            puts file.read
+                puts file.read
             end
         end
     end
