@@ -14,6 +14,7 @@ team7 = Team.new("Thunder")
 team8 = Team.new("Heat")
 team9 = Team.new("Magic")
 team10 = Team.new("Pacers")
+team11 = Team.new("Suns")
 
 tournament1.save_team(team1)
 tournament1.save_team(team2)
@@ -25,6 +26,7 @@ tournament1.save_team(team7)
 tournament1.save_team(team8)
 tournament1.save_team(team9)
 tournament1.save_team(team10)
+tournament1.save_team(team11)
  
 tournament1.print_info_by_team
 

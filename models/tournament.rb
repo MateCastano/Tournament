@@ -52,12 +52,10 @@ class Tournament
             matchups = []
             
             (0...(@teams.length / 2)).each do |i|
-              team_a = @teams[i]
-              team_b = @teams[@teams.length - 1 - i]
+                team_a = @teams[i]
+                team_b = @teams[@teams.length - 1 - i]
               
-              unless team_a.name == "Libre" || team_b.name == "Libre"
                 matchups << [team_a, team_b]
-              end
             end
           
             fixture << matchups
