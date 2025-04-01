@@ -41,19 +41,20 @@ class Tournament
 
     #Genera el fixture del torneo con los equipos disponibles
     def generate_fixture
+        teams_shuffled = @teams.shuffle
         
-        if @teams.length.odd?
-            @teams << Team.new("Libre")
+        if teams_shuffled.length.odd?
+            teams_shuffled << Team.new("Libre")
         end 
         
         fixture = []
 
-        (0...@teams.length - 1).each do |round|
+        (0...teams_shuffled.length - 1).each do |round|
             matchups = []
             
-            (0...(@teams.length / 2)).each do |i|
-                team_a = @teams[i]
-                team_b = @teams[@teams.length - 1 - i]
+            (0...(teams_shuffled.length / 2)).each do |i|
+                team_a = teams_shuffled[i]
+                team_b = teams_shuffled[teams_shuffled.length - 1 - i]
               
                 matchups << [team_a, team_b]
             end

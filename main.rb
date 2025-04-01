@@ -27,11 +27,6 @@ tournament1.save_team(team8)
 tournament1.save_team(team9)
 tournament1.save_team(team10)
 tournament1.save_team(team11)
- 
-tournament1.print_info_by_team
 
-puts "----------"
 tournament1.generate_fixture
 tournament1.show_fixture
-
-tournament1.generate_table
