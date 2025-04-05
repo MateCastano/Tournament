@@ -2,31 +2,15 @@ require_relative 'models/player.rb'
 require_relative 'models/team.rb'
 require_relative 'models/tournament.rb'
 
-tournament1 = Tournament.new("NBA") 
+puts "¡ Bienvenidos al sistema !"
+puts "1- Crear un nuevo torneo."
+puts "2- Agregar un nuevo equipo."
+puts "3- Ingresar un nuevo jugador."
+puts "4- Generar fixture."
+puts "5- Mostrar fixture."
+puts "6- Agregar nuevo resultado."
+puts "7- Mostrar resultados."
+puts "8- Salir."
 
-team1 = Team.new("Lakers")
-team2 = Team.new("Celtics")
-team3 = Team.new("Bulls")
-team4 = Team.new("Knicks")
-team5 = Team.new("Warriors")
-team6 = Team.new("Sixers")
-team7 = Team.new("Thunder")
-team8 = Team.new("Heat")
-team9 = Team.new("Magic")
-team10 = Team.new("Pacers")
-team11 = Team.new("Suns")
-
-tournament1.save_team(team1)
-tournament1.save_team(team2)
-tournament1.save_team(team3)
-tournament1.save_team(team4)
-tournament1.save_team(team5)
-tournament1.save_team(team6)
-tournament1.save_team(team7)
-tournament1.save_team(team8)
-tournament1.save_team(team9)
-tournament1.save_team(team10)
-tournament1.save_team(team11)
-
-tournament1.generate_fixture
-tournament1.show_fixture
+print "Ingrese un numero: "
+input = gets
