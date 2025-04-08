@@ -1,12 +1,25 @@
 require "json"
+
 class Tournament
+
+    attr_accessor :name, :teams, :results
     def initialize(name)
         @name = name
         @teams = []
         @results = []
-    end
 
-    attr_accessor :name, :teams, :results
+        Dir.mkdir("data") unless Dir.exist?("data")
+
+        tournament_data = {
+            name: @name,
+            teams: @teams,
+            results: @results
+        }
+
+        File.open("data/#{@name.downcase.gsub(" ", "_")}.txt", "w") do |file|
+            file.puts JSON.pretty_generate(tournament_data)
+        end
+    end
 
     #Methods
     #Muestra toda la info del torneo
