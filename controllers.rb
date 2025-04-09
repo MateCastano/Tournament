@@ -10,3 +10,16 @@ def new_tournament(name)
         return false
     end
 end
+
+#Crear equipo
+=begin
+def new_team(name)
+    team = Team.new(name)
+
+    if   
+        return true
+    else
+        return false
+    end
+end
+=end

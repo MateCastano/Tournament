@@ -13,14 +13,22 @@ puts "6- Agregar nuevo resultado."
 puts "7- Mostrar resultados."
 puts "8- Salir."
 
-print "Ingrese un numero: "
-input = gets
+option_correct = false
+
+until option_correct == true do
+    print "Ingrese un numero valido: "
+    input = gets.chomp.to_i
+
+    if input < 9 && input > 0
+        option_correct = true
+    end
+end
 
 case input.to_i
 when 1
     print "Ingrese el nombre del torneo: "
-    team = gets.chomp
-    register = new_tournament(team)
+    name = gets.chomp
+    register = new_tournament(name)
 
     if  register == true
         puts "Torneo registrado."
@@ -28,7 +36,17 @@ when 1
         puts "Torneo no registrado."
     end
 when 2
+=begin
+    "Ingrese el nombre del equipo: "
+    team = gets.chomp
+    register = new_team(team)
 
+    if  register == true
+        puts "Equipo registrado."
+    else
+        puts "Equipo no registrado."
+    end
+=end
 when 3
 
 when 4
