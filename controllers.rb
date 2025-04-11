@@ -12,7 +12,6 @@ def new_tournament(name)
 end
 
 #Crear equipo
-=begin
 def new_team(name)
     team = Team.new(name)
 
@@ -22,4 +21,3 @@ def new_team(name)
         return false
     end
 end
-=end

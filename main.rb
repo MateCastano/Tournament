@@ -36,7 +36,6 @@ when 1
         puts "Torneo no registrado."
     end
 when 2
-=begin
     "Ingrese el nombre del equipo: "
     team = gets.chomp
     register = new_team(team)
@@ -46,7 +45,6 @@ when 2
     else
         puts "Equipo no registrado."
     end
-=end
 when 3
 
 when 4
