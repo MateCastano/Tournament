@@ -1,24 +1,20 @@
 require "json"
+require_relative '../utils/storage_management.rb'
 
 class Tournament
-
     attr_accessor :name, :teams, :results
     def initialize(name)
         @name = name
         @teams = []
         @results = []
-
-        Dir.mkdir("data") unless Dir.exist?("data")
-
+        
         tournament_data = {
             name: @name,
             teams: @teams,
             results: @results
         }
 
-        File.open("data/#{@name.downcase.gsub(" ", "_")}.txt", "w") do |file|
-            file.puts JSON.pretty_generate(tournament_data)
-        end
+        storage_new_tournament(tournament_data)
     end
 
     #Methods

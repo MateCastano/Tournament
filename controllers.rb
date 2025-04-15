@@ -13,9 +13,7 @@ end
 
 #Crear equipo
 def new_team(name)
-    team = Team.new(name)
-
-    if   
+    if team = Team.new(name)
         return true
     else
         return false

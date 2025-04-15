@@ -2,6 +2,7 @@ require_relative 'models/player.rb'
 require_relative 'models/team.rb'
 require_relative 'models/tournament.rb'
 require_relative 'controllers.rb'
+require_relative '../utils/storage_management.rb'
 
 puts "¡ Bienvenidos al sistema !"
 puts "1- Crear un nuevo torneo."
