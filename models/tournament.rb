@@ -46,6 +46,8 @@ class Tournament
         end
 
         @teams << team
+
+        storage_new_team(@teams, @name)
     end
 
     #Genera el fixture del torneo con los equipos disponibles

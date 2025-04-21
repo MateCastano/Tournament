@@ -12,10 +12,8 @@ def new_tournament(name)
 end
 
 #Crear equipo
-def new_team(name)
-    if team = Team.new(name)
-        return true
-    else
-        return false
-    end
+def new_team(name, tournament_name)
+    team = Team.new(name)
+
+    save_team(team)
 end

@@ -2,7 +2,7 @@ require_relative 'models/player.rb'
 require_relative 'models/team.rb'
 require_relative 'models/tournament.rb'
 require_relative 'controllers.rb'
-require_relative '../utils/storage_management.rb'
+require_relative 'utils/storage_management.rb'
 
 puts "¡ Bienvenidos al sistema !"
 puts "1- Crear un nuevo torneo."
@@ -26,7 +26,7 @@ until option_correct == true do
 end
 
 case input.to_i
-when 1
+when 1 #Registar torneo.
     print "Ingrese el nombre del torneo: "
     name = gets.chomp
     register = new_tournament(name)
@@ -36,10 +36,13 @@ when 1
     else
         puts "Torneo no registrado."
     end
-when 2
+when 2 #Registar equipo.
+    "Ingrese el nombre del torneo: "
+    tournament = gets.chomp
+
     "Ingrese el nombre del equipo: "
     team = gets.chomp
-    register = new_team(team)
+    register = new_team(team, tournament)
 
     if  register == true
         puts "Equipo registrado."
