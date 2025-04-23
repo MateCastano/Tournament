@@ -58,6 +58,8 @@ when 6
 when 7
 
 when 8
+    puts "Gracias por usar el sistema. ¡Hasta luego!"
+    exit
 else
     puts "El numero que fue ingresado no es valido."
 end 
