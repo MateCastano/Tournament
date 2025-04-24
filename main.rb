@@ -37,10 +37,10 @@ when 1 #Registar torneo.
         puts "Torneo no registrado."
     end
 when 2 #Registar equipo.
-    "Ingrese el nombre del torneo: "
+    print "Ingrese el nombre del torneo: "
     tournament = gets.chomp
 
-    "Ingrese el nombre del equipo: "
+    print "Ingrese el nombre del equipo: "
     team = gets.chomp
     register = new_team(team, tournament)
 
