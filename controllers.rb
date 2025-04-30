@@ -29,7 +29,7 @@ def new_team(name, tournament_name)
     return
   end
 
-  if tournament_data[:teams].any? { |team| team[:name].downcase == team_name.downcase }
+  if tournament_data[:teams].any? { |team| team[:name].downcase == name.downcase }
     puts "Ese equipo ya existe."
     return
   end
