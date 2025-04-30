@@ -11,3 +11,5 @@ vendor/
 coverage/
 public/assets/
 *.txt
+!data/
+!data/.keep
