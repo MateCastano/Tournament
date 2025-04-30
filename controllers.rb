@@ -4,7 +4,7 @@ require_relative 'models/tournament.rb'
 
 #Buscar torneo por nombre
 def search_tournament_by_name(name) 
-    file_path = "data/#{name.downcase.strip}.json"
+    file_path = "data/#{name.downcase.strip}.txt"
     return nil unless File.exist?(file_path)
   
     file_data = JSON.parse(File.read(file_path), symbolize_names: true)

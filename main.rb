@@ -17,6 +17,7 @@ puts "8- Salir."
 option_correct = false
 
 until option_correct == true do
+    puts "--------------------------"
     print "Ingrese un numero valido: "
     input = gets.chomp.to_i
 
@@ -27,6 +28,7 @@ end
 
 case input.to_i
 when 1 #Registar torneo.
+    puts "--------------------------"
     print "Ingrese el nombre del torneo: "
     name = gets.chomp
     register = new_tournament(name)
